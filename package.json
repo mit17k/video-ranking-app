@@ -2,22 +2,29 @@
   "name": "video-ranking-app",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world && node ./node_modules/.bin/webpack",
-    "start": "node ./node_modules/concurrently/bin/concurrently.js \"bsb -make-world -w -ws _\" \"moduleserve ./ --port 8080\" -c green,magenta",
-    "clean": "bsb -clean-world"
+    "build": "node ./node_modules/bs-platform/bsb -make-world",
+    "start": "node ./node_modules/concurrently/bin/concurrently.js \"node ./node_modules/bs-platform/bsb -make-world -w -ws _\" \"node ./node_modules/webpack/bin/webpack.js serve\" -c green,magenta",
+    "clean": "node ./node_modules/bs-platform/bsb -clean-world"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "reason-react": ">=0.7.1",
-    "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1"
-  },
   "devDependencies": {
+    "@reasonml-community/graphql-ppx": "^1.0.1",
     "bs-platform": "^8.4.2",
     "concurrently": "^5.3.0",
-    "moduleserve": "^0.9.0"
+    "html-webpack-plugin": "^4.5.1",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.6",
+    "graphql": "^15.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "reason-apollo-client": "^1.0.0",
+    "reason-promise": "^1.1.2",
+    "reason-react": "^0.9.1",
+    "subscriptions-transport-ws": "^0.9.18"
   }
 }
