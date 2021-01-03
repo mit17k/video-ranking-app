@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Ranking Application</title>
+</head>
+<body>
+  <script>
+    window.process = {
+      env: {
+        NODE_ENV: 'development'
+      }
+    };
+  </script>
+
+  <div id="app-root"></div>
+
+  <script src="/moduleserve/load.js" data-module="/src/Index.bs.js"></script>
+  <script src="/watcher.js"></script>
+</body>
+</html>
