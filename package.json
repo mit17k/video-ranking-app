@@ -2,7 +2,7 @@
   "name": "video-ranking-app",
   "version": "0.1.0",
   "scripts": {
-    "build": "node ./node_modules/bs-platform/bsb -make-world",
+    "build": "node ./node_modules/bs-platform/bsb -make-world && node ./node_modules/webpack/bin/webpack.js",
     "start": "node ./node_modules/concurrently/bin/concurrently.js \"node ./node_modules/bs-platform/bsb -make-world -w -ws _\" \"node ./node_modules/webpack/bin/webpack.js serve\" -c green,magenta",
     "clean": "node ./node_modules/bs-platform/bsb -clean-world"
   },
